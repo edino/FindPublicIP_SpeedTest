@@ -13,6 +13,7 @@
 import subprocess
 import datetime
 import logging
+import sys
 
 def log_info(message, display=True):
     if display:
@@ -26,7 +27,10 @@ def log_error(message, display=True):
 
 def get_user_input(prompt):
     try:
-        return input(prompt)
+        if sys.stdin.isatty():  # Check if input is from a terminal
+            return input(prompt)
+        else:
+            return input()  # Read from stdin if input is from a pipeline
     except EOFError:
         return None
     except KeyboardInterrupt:
