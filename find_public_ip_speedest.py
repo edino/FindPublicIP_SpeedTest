@@ -4,10 +4,11 @@
 # License: GPL-3.0 license - https://github.com/edino/SpeedTest-Interface/blob/main/LICENSE
 # Script Summary: This script simplifies network speed testing, fetching the public IP, determining the interface, and running 'speedtest-cli'. Users customize output visibility, and specify the directory, and results are saved with interface details and a timestamp.
 # Purpose: To offer a user-friendly interface for network speed testing, making it accessible and customizable. Users input preferences and the script automates the speed test, providing both display and file output.
-# Build Date: 1:29 AM EST 2024-01-14
+# Build Date: 3:39 AM EST 2024-01-14
 
-# Execute with: curl -s https://raw.githubusercontent.com/edino/SpeedTest-Interface/main/speedtest_interface.py | python3 -
-# Another option: curl -sLo /tmp/speedtest_interface.py https://raw.githubusercontent.com/edino/SpeedTest-Interface/main/speedtest_interface.py && python3 /tmp/speedtest_interface.py
+# Execute with: curl -s https://raw.githubusercontent.com/edino/FindPublicIP_SpeedTest/main/find_public_ip_speedest.py | python3 -
+
+# Another option: curl -sLo /tmp/find_public_ip_speedest.py https://raw.githubusercontent.com/edino/FindPublicIP_SpeedTest/main/find_public_ip_speedest.py && python3 /tmp/find_public_ip_speedest.py
 
 import subprocess
 import datetime
@@ -83,7 +84,7 @@ def run_speedtest(interface, output_directory, show_output=True):
     ]
 
     try:
-        speedtest_output = subprocess.check_output(' '.join(speedtest_command), shell=True, executable='/bin/bash', text=True)
+        speedtest_output = subprocess.check_output(' '.join(speedtest_command), shell=True, text=True)
         if show_output:
             print(speedtest_output)
         with open(output_path, 'a') as output_file:
