@@ -30,7 +30,7 @@ def get_user_input(prompt):
         if sys.stdin.isatty():  # Check if input is from a terminal
             return input(prompt)
         else:
-            return input()  # Read from stdin if input is from a pipeline
+            return sys.stdin.readline().strip()  # Read from stdin if input is from a pipeline
     except EOFError:
         return None
     except KeyboardInterrupt:
