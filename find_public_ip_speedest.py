@@ -1,3 +1,14 @@
+# Copyright
+# Original author: Edino De Souza
+# Repository: https://github.com/edino/SpeedTest-Interface
+# License: GPL-3.0 license - https://github.com/edino/SpeedTest-Interface/blob/main/LICENSE
+# Script Summary: This script simplifies network speed testing, fetching the public IP, determining the interface, and running 'speedtest-cli'. Users customize output visibility, and specify the directory, and results are saved with interface details and a timestamp.
+# Purpose: To offer a user-friendly interface for network speed testing, making it accessible and customizable. Users input preferences and the script automates the speed test, providing both display and file output.
+# Build Date: 1:29 AM EST 2024-01-14
+
+# Execute with: curl -s https://raw.githubusercontent.com/edino/SpeedTest-Interface/main/speedtest_interface.py | python3 -
+# Another option: curl -sLo /tmp/speedtest_interface.py https://raw.githubusercontent.com/edino/SpeedTest-Interface/main/speedtest_interface.py && python3 /tmp/speedtest_interface.py
+
 import subprocess
 import datetime
 import logging
